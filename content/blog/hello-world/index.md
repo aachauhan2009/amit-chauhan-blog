@@ -1,22 +1,85 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+title: Safely access nested object with ES6 Destructuring
+date: "2020-01-13"
+description: "Safely access nested object with ES6 Destructuring"
 ---
 
-This is my first post on my new fake blog! How exciting!
+This is my first post on my blog about frot-end technologies and javascript!
 
-I'm sure I'll write a lot more interesting things in the future.
+I will start with basic but very useful topic. How can we use ES6 Destructuring to access values from nested object or array without using safe gaurd with `&&` operators.
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](http://en.wikipedia.org/wiki/Salted_duck_egg).
+Let's start with basic example of destructuring. This is how we can destructure values from object and assign them to variables.
+We can also rename variable to different name and give default value ie. if object doesn't have that key(this is important for our topic)
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
+```javascript
+  const data = {
+    id: '123',
+    value: 'someValue'
+  };
 
-![Chinese Salty Egg](./salty_egg.jpg)
+  // access id and value from data with destructuring 
+  const { id , value } = data;
+```
+
+Now let's try to access nested object.
+
+```javascript
+  const data = {
+    user: {
+      id: 1,
+      name: {
+        first: 'Amit',
+        last: 'Chauhan'
+      }
+    }
+  };
+```
+
+If we want to safely read firstName from this data this is how we would write without destructuring
+
+```javascript
+  const firstName = data && data.user && data.user.name && data.user.name.first;
+```
+
+Let's do it with destructuring.
+
+```javascript
+  const {
+    user: {
+      name: {
+        first: firstName // rename variable to firstName
+      } = {} // this part is where we give default value to empty object so code doesn't break
+    } = {} 
+  } = data;
+  console.log(firstName); // Amit
+```
+
+We can use destructuring to access array as well.
+
+```javascript
+  const dataArray = [{
+    name: {
+      first: 'Amit'
+    }
+  }];
+
+  const [{
+    name: {
+      first: firstName
+    } = {}
+  } = {}] = dataArray;
+  console.log(firstName); // Amit
+```
+
+
+Bonus tip
+
+We can use destructuring to swap variables.
+
+```javascript
+let a = 10;
+let b = 20;
+
+[a, b] = [b, a];
+console.log({ a, b }); // { a: 20, b: 10 }
+```
