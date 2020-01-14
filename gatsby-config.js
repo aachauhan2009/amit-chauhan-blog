@@ -42,7 +42,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              noInlineHighlight: false
+              noInlineHighlight: true
             },
           },
           `gatsby-remark-copy-linked-files`,
@@ -55,7 +55,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-46221482-3`,
       },
     },
     `gatsby-plugin-feed`,
