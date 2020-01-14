@@ -55,6 +55,8 @@ const Bio = () => {
       />
       <p>
         Written by <a href={`https://twitter.com/${social.twitter}`}><strong>{author}</strong></a>
+        <br />
+        Frontend Developer from Pune, India.
       </p>
     </div>
   )
