@@ -37,6 +37,8 @@ class BlogPostTemplate extends React.Component {
               }}
             >
               {post.frontmatter.date}
+              {" • "}
+              {post.fields.readingTime.text}
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -98,6 +100,11 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+      }
+      fields {
+        readingTime {
+          text
+        }
       }
     }
   }
