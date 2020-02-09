@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Amit's Blog`,
     author: `Amit Chauhan`,
-    description: `Amit Chauhan's Blog`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `A blog by Amit Chauhan about front-end topics like JavaScript, CSS, HTML, React JS etc...`,
+    siteUrl: `https://amitchauhan.tech/`,
     social: {
       twitter: `eramit123456`,
     },
@@ -43,9 +43,10 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              noInlineHighlight: true
+              noInlineHighlight: true,
             },
           },
+          `gatsby-remark-embedder`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
@@ -58,6 +59,12 @@ module.exports = {
       options: {
         trackingId: `UA-46221482-3`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+       exclude: ["/404*"],
+      }
     },
     `gatsby-plugin-feed`,
     {
