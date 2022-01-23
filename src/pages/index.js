@@ -30,10 +30,13 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <small>{node.frontmatter.date} {" • "} {node.fields.readingTime.text}</small>
+                <small style={{ color: "var(--textNormal)" }}>
+                  {node.frontmatter.date} {" • "} {node.fields.readingTime.text}
+                </small>
               </header>
               <section>
                 <p
+                  style={{ color: "var(--textNormal)" }}
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
                   }}

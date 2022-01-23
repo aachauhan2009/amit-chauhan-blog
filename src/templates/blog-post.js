@@ -23,8 +23,9 @@ class BlogPostTemplate extends React.Component {
             <h1
               style={{
                 marginTop: rhythm(1),
-                marginBottom: 0,
-                fontSize: 20,
+                marginBottom: rhythm(1),
+                fontSize: 30,
+                color: "var(--textNormal)",
               }}
             >
               {post.frontmatter.title}
@@ -34,6 +35,7 @@ class BlogPostTemplate extends React.Component {
                 ...scale(-1 / 5),
                 display: `block`,
                 marginBottom: rhythm(1),
+                color: "var(--textNormal)",
               }}
             >
               {post.frontmatter.date}
@@ -41,7 +43,10 @@ class BlogPostTemplate extends React.Component {
               {post.fields.readingTime.text}
             </p>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <section
+            style={{ color: "var(--textNormal)" }}
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
           <hr
             style={{
               marginBottom: rhythm(1),

@@ -3,7 +3,7 @@ module.exports = {
     title: `Amit's Blog`,
     author: `Amit Chauhan`,
     description: `A blog by Amit Chauhan about front-end topics like JavaScript, CSS, HTML, React JS etc...`,
-    siteUrl: `https://amitchauhan.tech/`,
+    siteUrl: `https://amit-chauhan-blog.netlify.app/`,
     social: {
       twitter: `eramit123456`,
     },
@@ -63,8 +63,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-       exclude: ["/404*"],
-      }
+        exclude: ["/404*"],
+      },
     },
     `gatsby-plugin-feed`,
     {
@@ -89,5 +89,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
+    `gatsby-plugin-dark-mode`,
   ],
 }

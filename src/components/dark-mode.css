@@ -1,0 +1,67 @@
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background-image: url("./icons/moon.svg"), url("./icons/sun.svg");
+  background-color: rgb(31, 55, 87);
+  background-repeat: no-repeat;
+  background-position: 4px center, 32px center;
+  background-size: 20px 20px, 20px 20px;
+  border-radius: 16px;
+  width: 56px;
+  height: 28px;
+  position: relative;
+  vertical-align: middle;
+  transform: scale(0.6);
+}
+
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  /* background: linear-gradient(to bottom, #fff 0%, #eee 100%); */
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: -4px;
+  left: -6px;
+  transition: left 0.25s;
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0px 0px 5px 2px #AFF;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0px 0px 10px 2px #AFF;
+}
+
+.toggle:active .toggle-switch:before, .toggle:focus .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0px 0px 20px 3px #AFF;
+}
+/* .toggle-checkbox:checked + .toggle-switch {
+  background-image: url("./icons/moon.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+} */
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 26px;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
+}
