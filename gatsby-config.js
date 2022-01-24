@@ -3,7 +3,7 @@ module.exports = {
     title: `Amit's Blog`,
     author: `Amit Chauhan`,
     description: `A blog by Amit Chauhan about front-end topics like JavaScript, CSS, HTML, React JS etc...`,
-    siteUrl: `https://amit-chauhan-blog.netlify.app/`,
+    siteUrl: `https://blog.amitchauhan.co.in`,
     social: {
       twitter: `eramit123456`,
     },
